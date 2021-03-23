@@ -77,7 +77,8 @@ resource "google_sql_database_instance" "master" {
   project          = var.project_id
   region           = var.cloudsql_region
   database_version = "MYSQL_5_7"
-
+  deletion_protection=false
+  
   settings {
     tier              = var.cloudsql_type
     activation_policy = "ALWAYS"
